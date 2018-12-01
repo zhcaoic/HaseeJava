@@ -21,8 +21,6 @@ public class SearchController {
                             ModelMap modelMap) {
         Student student = studentService.getStudentByName(name);
         modelMap.addAttribute("student", student);
-        modelMap.addAttribute("createTime", student.getCreateTime().toString());
-        modelMap.addAttribute("updateTime", student.getUpdateTime().toString());
 
         return "searchone";
     }
@@ -44,8 +42,6 @@ public class SearchController {
     public String register(@RequestParam("studentName") String studentName,
                            @RequestParam("studentId") String studnetId,
                            @RequestParam("studentAddress") String studentAddress) {
-
-        System.out.println("#####################" + studentName);
 
         studentService.registerService(studnetId, studentName, studentAddress);
 
